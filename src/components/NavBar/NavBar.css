@@ -6,13 +6,12 @@
 
 .menu{
     background-color: black;
-    height: 75px;
-    width:100vw;
+    height: 30px;
+    width:200 rem;
     display:flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #afff;
-    box-shadow: 5px 0 10px rgba(0, 0, 0,.0);
+    
 }
 
 .menuItems{

@@ -1,0 +1,21 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.cart{
+    padding-top: 20px;
+    width:180 rem;
+    background-color: black;
+    display:flex;
+    flex-direction: row; /* La dirección por defecto es row, no hacía falta aclarar */
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.cart div{
+    width: 50vw;
+    padding: 7px 13px;
+    display:block;
+}
