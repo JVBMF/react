@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.conteMetodosDePago{
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    margin-left: 30rem;
+    margin-right: 30rem; /* puse 30 rem de forma arbitraria, mi intención es que el div quede centrado y así parece estarlo, seguro hay una forma mejor pero el align-items:center no hace lo que busco*/
+}
+
+.metodosDePago{
+   
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.metodosDePago a{
+    margin: 10px;
+    display: flex;
+    align-items: center;
+} 

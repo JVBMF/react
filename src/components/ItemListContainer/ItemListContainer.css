@@ -4,18 +4,45 @@
     box-sizing: border-box;
 }
 
-.cart{
-    padding-top: 20px;
-    width:180 rem;
-    background-color: black;
-    display:flex;
-    flex-direction: row; /* La dirección por defecto es row, no hacía falta aclarar */
-    flex-wrap: nowrap;
-    align-items: center;
+.itemCarrousel{
+    height:400px;
+    position:relative;
 }
 
-.cart div{
-    width: 50vw;
-    padding: 7px 13px;
-    display:block;
+.tarjetaCarrousel{
+    background-color: aqua;
+    height: 100%;
+}
+
+.flechasCarrousel{
+    position:absolute; /* Posicion absoluta respecto del contenedor padre .itemCarrousel */
+    top:0; 
+    height: 20em; /* Ahi parece que quedan las flechas al medio */
+    width:100%; /* Tiene el mismo ancho que su padre */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+#conteItemCarrousel{
+    border: 1px solid black;
+    height:350px;
+    overflow: hidden;  /* Para que se active el overflow el height debe ser menor que el height de su contenedor padre (.itemCarrousel), es decir menor a 400 px */
+}
+
+#tarjetaCarrousel1{
+    background-color: blueviolet;
+}
+
+#tarjetaCarrousel2{
+    background-color: blue;
+}
+
+#tarjetaCarrousel3{
+    background-color: green;
+}
+
+a{
+    text-decoration: none;
 }

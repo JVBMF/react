@@ -10,16 +10,11 @@ const NavBar = () => {
     <div>
         <nav class="menu">
             <ul class="menuItems">
-                {/* Me dice que <a href=""> tiene un error pero compila igual */}
-                <li><a href="#">Logo</a></li> 
-                <li><a href="#">Zapatillas</a></li>
-                <li><a href="#">Remeras</a></li>
-                <li><a href="#">Pantalones</a></li>
+                <li><a href="#"><img src="https://w7.pngwing.com/pngs/1005/948/png-transparent-shopping-cart-graphy-shopping-cart-furniture-rectangle-supermarket.png" alt="" height="50 rem"/></a></li> 
+                <li><a href="#">zapatillas</a></li>
+                <li><a href="#">remeras</a></li>
+                <li><a href="#">pantalones</a></li>
             </ul>
-    
-            <span class="btn_menu">
-                <i class="fa fa fa-bars"></i>
-            </span>
     
         </nav>
     </div>

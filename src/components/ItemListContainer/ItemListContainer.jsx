@@ -3,28 +3,68 @@ import './ItemListContainer.css'
 //function ComponenteImagen(){} sería otra forma de hacerlo
 
 const ComponenteImagen= () => {
+
     return(
 
-        <div class='cart'>
-            <div class='cartItem'>
-                <img src="https://w7.pngwing.com/pngs/1005/948/png-transparent-shopping-cart-graphy-shopping-cart-furniture-rectangle-supermarket.png" alt="" height="180 rem"/>
-                <br></br>
-                <button>Añadir a Carrito</button>
+        <div id="conteItemCarrousel">
+
+            <div className='itemCarrousel' id="itemCarrousel1">
+
+                <div className="tarjetaCarrousel" id='tarjetaCarrousel1'>
+                    A
+                </div>
+
+                <div className="flechasCarrousel">
+                    <a href="#itemCarrousel1">
+                    <i >I</i>
+                    </a>
+
+                    <a href="#itemCarrousel2">
+                    <i>D</i>
+                    </a>
+                </div>
+
             </div>
 
-            <div class='cartItem'>
-                <img src="https://w7.pngwing.com/pngs/1005/948/png-transparent-shopping-cart-graphy-shopping-cart-furniture-rectangle-supermarket.png" alt="" height="180 rem"/>
-                <br></br>
-                <button>Añadir a Carrito</button>
+            <div className='itemCarrousel' id="itemCarrousel2">
+
+                <div className="tarjetaCarrousel" id='tarjetaCarrousel2'>
+                    B
+                </div>
+
+                <div className="flechasCarrousel">
+
+                    <a href="#itemCarrousel1">
+                        <i>I</i>
+                    </a>
+
+                    <a href="#itemCarrousel3">
+                        <i>D</i>
+                    </a>
+                </div>   
+
             </div>
-            
-            <div class='cartItem'>
-                <img src="https://w7.pngwing.com/pngs/1005/948/png-transparent-shopping-cart-graphy-shopping-cart-furniture-rectangle-supermarket.png" alt="" height="180 rem"/>
-                <br></br>
-                <button>Añadir a Carrito</button>
+
+            <div className='itemCarrousel' id="itemCarrousel3">
+
+                <div className="tarjetaCarrousel" id='tarjetaCarrousel3'>
+                    C
+                </div>
+
+                <div className="flechasCarrousel">
+
+                    <a href="#itemCarrousel2">
+                        <i>I</i>
+                    </a>
+
+                    <a href="#itemCarrousel3">
+                        <i>D</i>
+                    </a>
+
+                </div>   
+
             </div>
         </div>
-        
     )
 }
 
