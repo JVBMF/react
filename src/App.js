@@ -2,9 +2,9 @@ import './App.css';
 import { NavBar } from './components/NavBar/NavBar';
 import {ComponenteImagen} from './components/ItemListContainer/ItemListContainer';
 import { MetodosDePago } from './components/MetodosDePago/MetodosDePago';
+import {Contador} from './components/Contador/Contador';
 
 function App() {
-
 
     return ( 
         <div className='App'>
@@ -21,6 +21,11 @@ function App() {
 
             <div>
                 <MetodosDePago/>
+            </div>
+
+            <div>
+                <br></br>
+                <Contador/>
             </div>
 
         </div>
