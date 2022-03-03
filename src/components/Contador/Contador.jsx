@@ -6,7 +6,7 @@ const Contador =(obj) =>{
 
     const initial = obj.initial;
     const stock = obj.stock;
-    const [count, setCount]=useState(initial)
+    const [count, setCount]=useState(initial);
     console.log(obj);
     console.log(initial);
 
