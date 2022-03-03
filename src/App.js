@@ -25,7 +25,7 @@ function App() {
 
             <div>
                 <br></br>
-                <Contador/>
+                <Contador initial={1} stock={10} /* onAdd={'mostrarCantidad'} *//>
             </div>
 
         </div>
