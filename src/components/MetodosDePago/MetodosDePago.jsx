@@ -1,3 +1,4 @@
+import React from 'react';
 import './MetodosDePago.css'
 
 const MetodosDePago = () =>{

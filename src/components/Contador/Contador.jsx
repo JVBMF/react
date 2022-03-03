@@ -1,43 +1,44 @@
-import { useState, useEffect } from "react"; /* Uso un hook, es decir, el valor de la variable count será persistente */
+import React from 'react';
+import { useState } from "react"; /* Uso un hook, es decir, el valor de la variable count será persistente */
 import './Contador.css'
 
 const Contador =(obj) =>{
 
-    let initial = obj.initial;
-    let stock = obj.stock;
-    const [count, setCount]=useState({initial})
+    const initial = obj.initial;
+    const stock = obj.stock;
+    const [count, setCount]=useState(initial)
+    console.log(obj);
+    console.log(initial);
 
     const suma=()=>{
-        setCount(count+1);
+        if(count<stock){
+            setCount(count+1);
+        }
+        else{
+            alert('Se excedió el stock');
+        }
     }
  
     const resta=()=>{
-        setCount(count-1);
+        if(count>initial){
+            setCount(count-1);
+        }
+        else{
+            alert('Valor no valido')
+        }
     }
-
-    useEffect(()=>{
-        console.log('no válido');
-    }, [count<initial]
-    )
-
-    useEffect(()=>{
-        console.log('no válido');
-    }, [count>=stock]
-    )
-
-        
 
     return(
 
         <div className="conteContador">
             <div className="contador">
-
                 <button onClick={suma} id="button1">+</button>
                 <label id="label1">{count}</label>  
                 <button onClick={resta} id="button2">-</button> {/* Al hacer click se vuelve a cargar todo el componente (rerenderiza). Es decir, se vuelve a ejecutar la funcion  */}    
             </div>
             <button>Agregar al carrito</button>
         </div>
+
     )
 }
 

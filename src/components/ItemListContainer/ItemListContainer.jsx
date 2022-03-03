@@ -1,3 +1,4 @@
+import React from 'react';
 import './ItemListContainer.css'
 
 //function ComponenteImagen(){} sería otra forma de hacerlo

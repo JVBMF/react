@@ -11,12 +11,12 @@ function App() {
         
             <div className = "App" > 
                 <NavBar />
-                <br></br> 
+                <br/> 
             </div>
 
             <div>
                 <ComponenteImagen/>
-                <br></br>
+                <br/>
             </div>
 
             <div>
@@ -25,7 +25,7 @@ function App() {
 
             <div>
                 <br></br>
-                <Contador initial={1} stock={10} /* onAdd={'mostrarCantidad'} *//>
+                <Contador initial={1} stock={10}/>
             </div>
 
         </div>
