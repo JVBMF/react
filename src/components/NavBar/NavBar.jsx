@@ -1,23 +1,34 @@
 import React from 'react';
-import './NavBar.css';
-
-/* Esta NavBar es function based */
+/* import './NavBar.css'; Al usar bootsrap no tengo que usar mi css*/ 
+/* import {Nav, Navbar ,Container, NavDropdown} from 'react-bootstrap'; */ /*  importacion de la forma poco recomendada, trayendo toda la libreria */
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Container from 'react-bootstrap/Container';
 
 const NavBar = () => {
     
  return(
 
-    <div>
-        <nav className="menu">
-            <ul className="menuItems">
-                <li><a href="#"><img src="https://w7.pngwing.com/pngs/1005/948/png-transparent-shopping-cart-graphy-shopping-cart-furniture-rectangle-supermarket.png" alt="" height="50 rem"/></a></li> 
-                <li><a href="#">zapatillas</a></li>
-                <li><a href="#">remeras</a></li>
-                <li><a href="#">pantalones</a></li>
-            </ul>
-    
-        </nav>
-    </div>
+    <Navbar bg="light" expand="lg">
+    <Container>
+      <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="me-auto">
+          <Nav.Link href="#home">Home</Nav.Link>
+          <Nav.Link href="#link">Link</Nav.Link>
+          <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+          </NavDropdown>
+        </Nav>
+      </Navbar.Collapse>
+    </Container>
+  </Navbar>
  )
 }
 

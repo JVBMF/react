@@ -1,7 +1,7 @@
 export const productos=[
-    {id:1, name:'remeras', stock:5},
-    {id:2, name:'zapatillas', stock:7},
-    {id:3, name:'pantalones', stock:10},
+    {id:1, name:'remera'},
+    {id:2, name:'zapatilla'},
+    {id:3, name:'pantalon'},
 ]
 
 export const getFetch = new Promise((resolve,reject)=>{
@@ -12,7 +12,7 @@ export const getFetch = new Promise((resolve,reject)=>{
         setTimeout(()=> 
         {
             resolve(productos);
-        },3000)
+        },2000)
     }
     else{
         reject('400 not found');

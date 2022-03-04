@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
 import {getFetch} from '../../helpers/getFetch' /* ¿Por que la ruta se escribe con ../.. ? */
-
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 function ItemListContainer(){
+
     const[productos,setProductos]=useState([])
     
     useEffect(()=>{
@@ -17,10 +19,19 @@ function ItemListContainer(){
         // [1,2,3,4] => nuevo array [<li>1</li>,....]
         <div>
             {productos.map((prod) => 
-            
-            /* Acá puedo generar un html complejo*/
-            
-            <li key={prod.id}> {prod.name} </li>)
+
+                <Card style={{ width: '18rem' }} key={prod.id}>
+                <Card.Img variant="top" src="holder.js/100px180">{/* {prod.foto} */}</Card.Img> 
+                <Card.Body>
+                  <Card.Title>{prod.name}</Card.Title>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make up the bulk of
+                    the card's content.
+                  </Card.Text>
+                  <Button variant="primary">Añadir al carrito</Button>
+                </Card.Body>
+                </Card>
+                )
             }
 
 

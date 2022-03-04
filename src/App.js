@@ -1,4 +1,5 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import {NavBar} from './components/NavBar/NavBar';
 import {ComponenteImagen} from './components/ItemCarrousel/ItemCarrousel';
 import {MetodosDePago} from './components/MetodosDePago/MetodosDePago';
@@ -14,7 +15,6 @@ function App() {
         
             <div className = "App" > 
                 <NavBar />
-                <br/> 
             </div>
 
             <div>
