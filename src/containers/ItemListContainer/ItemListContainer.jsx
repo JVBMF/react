@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import {getFetch} from '../../helpers/getFetch' /* ¿Por que la ruta se escribe con ../.. ? */
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
+
 function ItemListContainer(){
 
     const[productos,setProductos]=useState([])
@@ -10,7 +11,7 @@ function ItemListContainer(){
         getFetch //Llamada a la api
         .then((respuesta)=>{return respuesta})
         .then(respuesta=>setProductos(respuesta))
-        .catch(err=>console.log(err))
+        .catch(err=>console.log(err))      
         .finally(()=>console.log('loading'))
     },[])
 
@@ -21,7 +22,7 @@ function ItemListContainer(){
             {productos.map((prod) => 
 
                 <Card style={{ width: '18rem' }} key={prod.id}>
-                <Card.Img variant="top" src="holder.js/100px180">{/* {prod.foto} */}</Card.Img> 
+                <Card.Img variant="top">{prod.foto}</Card.Img>
                 <Card.Body>
                   <Card.Title>{prod.name}</Card.Title>
                   <Card.Text>
