@@ -7,8 +7,9 @@ const Contador =(obj) =>{
     const initial = obj.initial;
     const stock = obj.stock;
     const [count, setCount]=useState(initial);
-    console.log(obj);
-    console.log(initial);
+    const dif =stock-count;
+    
+    console.log(dif);
 
     const suma=()=>{
         if(count<stock){
@@ -33,10 +34,9 @@ const Contador =(obj) =>{
         <div className="conteContador">
             <div className="contador">
                 <button onClick={suma} id="button1">+</button>
-                <label id="label1">{count}</label>  
+                <label>Stock disponible:{dif} </label> 
                 <button onClick={resta} id="button2">-</button> {/* Al hacer click se vuelve a cargar todo el componente (rerenderiza). Es decir, se vuelve a ejecutar la funcion  */}    
             </div>
-            <button>Agregar al carrito</button>
         </div>
 
     )

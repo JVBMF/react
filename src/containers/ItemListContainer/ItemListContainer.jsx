@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import {getFetch} from '../../helpers/getFetch' /* ¿Por que la ruta se escribe con ../.. ? */
+import {Contador} from '../../components/Contador/Contador'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
-
+ 
 function ItemListContainer(){
 
     const[productos,setProductos]=useState([])
@@ -14,7 +15,6 @@ function ItemListContainer(){
         .catch(err=>console.log(err))      
         .finally(()=>console.log('loading'))
     },[])
-
     
     return(
         // [1,2,3,4] => nuevo array [<li>1</li>,....]
@@ -22,19 +22,19 @@ function ItemListContainer(){
             {productos.map((prod) => 
 
                 <Card style={{ width: '18rem' }} key={prod.id}>
-                <Card.Img variant="top">{prod.foto}</Card.Img>
+                <Card.Img variant="top" src={prod.foto}/>
                 <Card.Body>
                   <Card.Title>{prod.name}</Card.Title>
                   <Card.Text>
                     Some quick example text to build on the card title and make up the bulk of
                     the card's content.
                   </Card.Text>
-                  <Button variant="primary">Añadir al carrito</Button>
+                  <Button variant="primary">Ver detalle del producto</Button>
+                  <Contador initial={1} stock={10}/>
                 </Card.Body>
                 </Card>
                 )
             }
-
 
             {/* [1,2,3,4].map((nro,index)=><li key={index}> {nro} <li/>)
             
