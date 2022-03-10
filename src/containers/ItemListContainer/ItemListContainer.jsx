@@ -15,6 +15,28 @@ function ItemListContainer(){
         .catch(err=>console.log(err))      
         .finally(()=>console.log('loading'))
     },[])
+
+    useEffect(()=>{
+        let url =`assets/DATA.json`
+        fetch(url) //Por defecto el verbo es GET
+
+        .then(resp => resp.json()) //Me devuelve el parse
+        .then(resp => console.log(resp))
+
+        /* Como ver donde hay un error:
+        
+        .then(async resp=>{
+            try{
+                const data= await resp.json()
+                console.log('resp data?',data)
+            } catch(err){
+                console.log('Error happened here!')
+                console.log(err)
+            }
+        })
+        
+        */
+    },[])
     
     return(
         // [1,2,3,4] => nuevo array [<li>1</li>,....]
