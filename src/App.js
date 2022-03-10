@@ -28,6 +28,9 @@ function App() {
                 <ItemListContainer/>
             </div>
 
+            {/* <div>
+                <ItemDetailContainer/>
+            </div> */}
         </div>
     );
     

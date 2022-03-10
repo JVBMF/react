@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import {getFetch} from '../../helpers/getFetch' /* ¿Por que la ruta se escribe con ../.. ? */
+/* import {getFetch} from '../../helpers/getFetch' */  /* ¿Por que la ruta se escribe con ../.. ? */
 import {Contador} from '../../components/Contador/Contador'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
@@ -8,34 +8,30 @@ function ItemListContainer(){
 
     const[productos,setProductos]=useState([])
     
-    useEffect(()=>{
+    /* useEffect(()=>{
         getFetch //Llamada a la api
         .then((respuesta)=>{return respuesta})
         .then(respuesta=>setProductos(respuesta))
         .catch(err=>console.log(err))      
         .finally(()=>console.log('loading'))
-    },[])
+    },[]) */
 
     useEffect(()=>{
-        let url =`assets/DATA.json`
-        fetch(url) //Por defecto el verbo es GET
+
+        /* Api mia; */
+
+        /* let url ='assets/DATA.json'  Por algún motivo esta no anda y la de meli si */
+
+        /* Api MercadoLibre: */
+
+        fetch('https://api.mercadolibre.com/sites/MLA/search?q=adidas/?limit=10') //Por defecto el verbo es GET. No se como poner el limite acá
 
         .then(resp => resp.json()) //Me devuelve el parse
-        .then(resp => console.log(resp))
 
-        /* Como ver donde hay un error:
+        .then(resp => setProductos(resp.results))
+
+        /* .then(resp => console.log(resp.results))  No me deja verlo si use un then con un resp.results antes, no se que onda*/
         
-        .then(async resp=>{
-            try{
-                const data= await resp.json()
-                console.log('resp data?',data)
-            } catch(err){
-                console.log('Error happened here!')
-                console.log(err)
-            }
-        })
-        
-        */
     },[])
     
     return(
@@ -44,9 +40,9 @@ function ItemListContainer(){
             {productos.map((prod) => 
 
                 <Card style={{ width: '18rem' }} key={prod.id}>
-                <Card.Img variant="top" src={prod.foto}/>
+                {/* <Card.Img variant="top" src={prod.foto}/> */}
                 <Card.Body>
-                  <Card.Title>{prod.name}</Card.Title>
+                  <Card.Title>{prod.title}</Card.Title>
                   <Card.Text>
                     Some quick example text to build on the card title and make up the bulk of
                     the card's content.
