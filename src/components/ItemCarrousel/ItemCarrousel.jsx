@@ -3,7 +3,7 @@ import './ItemCarrousel.css'
 
 //function ComponenteImagen(){} sería otra forma de hacerlo
 
-const ComponenteImagen= () => {
+function ItemCarrousel(){
 
     return(
 
@@ -69,4 +69,4 @@ const ComponenteImagen= () => {
     )
 }
 
-export {ComponenteImagen}
+export {ItemCarrousel}

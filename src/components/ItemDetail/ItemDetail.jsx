@@ -1,6 +1,10 @@
 import Card from 'react-bootstrap/Card'
 
+
 function ItemDetail({producto}){
+
+        
+
     return(
         <div>
             <Card style={{ width: '18rem' }}>

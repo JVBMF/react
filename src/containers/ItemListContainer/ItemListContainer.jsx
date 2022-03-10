@@ -1,29 +1,31 @@
 import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import {ItemList} from '../../components/ItemList/ItemList'
-
 
 function ItemListContainer(){
 
     const[productos,setProductos]=useState([])
 
+    const {categoriaId}=useParams()
+
     useEffect(()=>{
 
-        /* Api MercadoLibre: */
+        if(categoriaId){
+            fetch('https://api.mercadolibre.com/sites/MLA/search?q=adidas')
 
-        fetch('https://api.mercadolibre.com/sites/MLA/search?q=adidas') //Por defecto el verbo es GET. No se como poner el limite acá
+            .then((resp) => setProductos(resp.filter(pro => pro.categoria===categoriaId))) //La pregunta es, existe pro.categoria en la api?
+        }else{
+            fetch('https://api.mercadolibre.com/sites/MLA/search?q=adidas')
 
-        .then(resp => resp.json()) //Me devuelve el parse
-
-        .then(resp => setProductos(resp.results))
-
-        /* .then(resp => console.log(resp.results))  No me deja verlo si use un then con un resp.results antes, no se que onda*/
+            .then(resp => setProductos(resp.results))
+        }
         
-    },[])
+    },[categoriaId])
+
+    console.log(categoriaId)  /* Cuando quiero ir a lista me sale que su categoriaId es undefined, voy a aprovechar eso haciendo un if*/
     
     return(
-        
             <ItemList productos={productos}/>
-        
     )
 }
 export{ItemListContainer}

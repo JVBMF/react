@@ -1,9 +1,7 @@
 import React from 'react';
-/* import './NavBar.css'; Al usar bootsrap no tengo que usar mi css*/ 
-/* import {Nav, Navbar ,Container, NavDropdown} from 'react-bootstrap'; */ /*  importacion de la forma poco recomendada, trayendo toda la libreria */
+import { NavLink } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
 
 const NavBar = () => {
@@ -12,19 +10,15 @@ const NavBar = () => {
 
     <Navbar bg="light" expand="lg">
     <Container>
-      <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+      <NavLink to="/">React-Bootstrap</NavLink>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#link">Link</Nav.Link>
-          <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-          </NavDropdown>
+          <NavLink to="/lista">Lista</NavLink>
+          <NavLink to="/categoria/gorra">gorra</NavLink>
+          <NavLink to="/categoria/remera">remera</NavLink> {/* Como es de la forma categoria/:categoriaId su Id es remera */}
+          <NavLink to="/detalle">Detalle</NavLink>
+          <NavLink to="/cart">Carrito</NavLink>
         </Nav>
       </Navbar.Collapse>
     </Container>
