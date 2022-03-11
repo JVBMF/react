@@ -9,7 +9,7 @@ const Contador =(obj) =>{
     const [count, setCount]=useState(initial);
     const dif =stock-count;
     
-    console.log(dif);
+    /* console.log(dif); */
 
     const suma=()=>{
         if(count<stock){

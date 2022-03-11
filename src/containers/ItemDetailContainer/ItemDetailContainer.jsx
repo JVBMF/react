@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { ItemDetail } from '../../components/ItemDetail/ItemDetail'
-import { getFetch } from '../../helpers/getFetch'
+/* import { getFetch } from '../../helpers/getFetch' */
 import {useParams} from 'react-router-dom'
 
 function ItemDetailContainer(){
@@ -10,11 +10,18 @@ function ItemDetailContainer(){
     console.log(detalleId) /* Veo que capture efectivamente el parametro, y lo hace. Obs: detalleId es un string*/
 
     //Llamada a la api
-    useEffect(()=>{
+    /* useEffect(()=>{
         getFetch
         .then(resp=> setProducto(resp.find(prod =>prod.id===1)))
+    },[]) */
+
+    useEffect(()=>{
+            fetch('https://api.mercadolibre.com/sites/MLA/search?q=adidas')
+            /* .then(resp=> resp.json())
+            .then(resp=>console.log(resp)) */
+            .then(resp=>setProducto(resp.find(prod=>prod.id)))
     },[])
-    console.log(producto)
+    /* console.log(producto) */
 
     return(
         <div>
@@ -24,7 +31,3 @@ function ItemDetailContainer(){
 }
 
 export {ItemDetailContainer}
-
-
-//$%7Bprod.id%7D
-//$%7Bprod.id%7D

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import {  useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import {ItemList} from '../../components/ItemList/ItemList'
 
@@ -10,22 +10,38 @@ function ItemListContainer(){
 
     useEffect(()=>{
 
+        /* fetch('https://api.mercadolibre.com/sites/MLA/search?q=zapatillas')
+
+        .then(resp => resp.json())
+
+       .then(resp=>{console.log(resp)}) */  /* con esto veo que es lo que puedo usar como filtro*/
+
+        /* .then(resp => setProductos(resp.results)) */
+
         if(categoriaId){
+
             fetch('https://api.mercadolibre.com/sites/MLA/search?q=adidas')
 
-            .then((resp) => setProductos(resp.filter(pro => pro.categoria===categoriaId))) //La pregunta es, existe pro.categoria en la api?
+            .then(resp => resp.json())
+            .then((resp) => setProductos(resp.filter(pro => pro.id===categoriaId))) 
+
         }else{
             fetch('https://api.mercadolibre.com/sites/MLA/search?q=adidas')
+            
+            .then(resp => resp.json())
 
-            .then(resp => setProductos(resp.results))
+            .then(resp => setProductos(resp.results)) 
         }
         
-    },[categoriaId])
+    },[categoriaId] )
 
-    console.log(categoriaId)  /* Cuando quiero ir a lista me sale que su categoriaId es undefined, voy a aprovechar eso haciendo un if*/
+    console.log(categoriaId) /* Cuando quiero ir a lista me sale que su categoriaId es undefined, voy a aprovechar eso haciendo un if*/
     
     return(
-            <ItemList productos={productos}/>
+            <div>
+                <ItemList productos={productos}/>  {/* Siguiendo este return cuando voy a la pestaña lista me debería mostrar lo mismo que muestra en la pestaña gorra o remera */}
+            </div>
+            
     )
 }
 export{ItemListContainer}
