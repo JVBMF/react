@@ -9,19 +9,44 @@ function ItemDetailContainer(){
     const {detalleId} = useParams() /* Capturo el parametro */
     console.log(detalleId) /* Veo que capture efectivamente el parametro, y lo hace. Obs: detalleId es un string*/
 
-    //Llamada a la api
-    /* useEffect(()=>{
-        getFetch
-        .then(resp=> setProducto(resp.find(prod =>prod.id===1)))
-    },[]) */
-
     useEffect(()=>{
-            fetch('https://api.mercadolibre.com/sites/MLA/search?q=adidas')
-            /* .then(resp=> resp.json())
-            .then(resp=>console.log(resp)) */
-            .then(resp=>setProducto(resp.find(prod=>prod.id)))
-    },[])
-    /* console.log(producto) */
+
+            if(detalleId){
+
+                fetch('https://api.mercadolibre.com/sites/MLA/search?q=adidas/') //¿aca tengo que agregar el filtro del id?
+
+                /* fetch('https://api.mercadolibre.com/sites/MLA/search?'+detalleId) */
+    
+                .then(resp=>{
+
+                    const elementos=resp.json()
+                    console.log(elementos)
+                    const elementosFiltrados=elementos.filter(pro => pro.id===detalleId)
+                    console.log(elementosFiltrados)
+                    setProducto(elementosFiltrados)
+
+                })
+
+               /*  .then(resp=>{console.log(resp.results)})  *///Me muestra toda la lista sin tener en cuenta el detalleId (muestra todos los productos) ¿Como hago para filtrar esto por id si me dice que resp.filter no es una funcion?
+
+                /* .then(resp=>console.log(resp.filter(pro=>pro.id===detalleId))) */
+
+                /* .then(resp=> setProducto(resp.filter(pro => pro.id===detalleId) )) */
+
+                /* .then(resp=>console.log(resp.filter(pro=>pro.id===detalleId)))
+                .then((resp) => setProducto(resp.filter(pro => pro.id===detalleId) )) */
+
+            }else{
+
+                fetch('https://api.mercadolibre.com/sites/MLA/search?q=adidas/')
+                
+                .then(resp => resp.json()) 
+                
+                .then(resp => setProducto(resp.results))
+            }
+            
+    },[detalleId])
+    
 
     return(
         <div>

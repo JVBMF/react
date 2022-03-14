@@ -23,13 +23,14 @@ function ItemListContainer(){
             fetch('https://api.mercadolibre.com/sites/MLA/search?q=adidas')
 
             .then(resp => resp.json())
-            .then((resp) => setProductos(resp.filter(pro => pro.id===categoriaId))) 
+            
+            .then(resp => setProductos(resp.filter(pro => pro.id===categoriaId)))
 
-        }else{
+        }else{//si entra por el undefined me muestra todo sion filtrar
             fetch('https://api.mercadolibre.com/sites/MLA/search?q=adidas')
             
             .then(resp => resp.json())
-
+            /* .then(resp => console.log(resp.results)) */  //Al escribir esta línea me falla el código 
             .then(resp => setProductos(resp.results)) 
         }
         
@@ -41,7 +42,6 @@ function ItemListContainer(){
             <div>
                 <ItemList productos={productos}/>  {/* Siguiendo este return cuando voy a la pestaña lista me debería mostrar lo mismo que muestra en la pestaña gorra o remera */}
             </div>
-            
     )
 }
 export{ItemListContainer}

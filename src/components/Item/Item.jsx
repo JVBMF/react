@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom'
 function Item({prod}){
     return(
         <div key={prod.id}>
-            
+            <br/>
             <Card style={{ width: '18rem' }}>
                 {/* <Card.Img variant="top" src={prod.foto}/> */}
                 <Card.Body>
@@ -27,6 +27,7 @@ function Item({prod}){
                     <Contador initial={1} stock={10}/>
                 </Card.Body>
             </Card>
+            
         </div>
     )
 }

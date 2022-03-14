@@ -15,8 +15,8 @@ const NavBar = () => {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
           <NavLink to="/lista">Lista</NavLink>
-          <NavLink to="/categoria/gorra">Gorra</NavLink>
-          <NavLink to="/categoria/remera">Remera</NavLink> {/* Como es de la forma categoria/:categoriaId su Id es remera */}
+          {/* <NavLink to="/categoria/gorra">Gorra</NavLink>
+          <NavLink to="/categoria/remera">Remera</NavLink> */} {/* Como es de la forma categoria/:categoriaId su Id es remera */}
           <NavLink to="/detalle">Detalle</NavLink>
           <NavLink to="/cart">Carrito</NavLink>
         </Nav>
