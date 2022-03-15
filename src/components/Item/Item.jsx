@@ -1,7 +1,6 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
-import {Contador} from '../Contador/Contador'
 import {Link} from 'react-router-dom'
 
 function Item({prod}){
@@ -23,8 +22,6 @@ function Item({prod}){
                             </Button>
                         </Link>
                     </div>
-
-                    <Contador initial={1} stock={10}/>
                 </Card.Body>
             </Card>
             
