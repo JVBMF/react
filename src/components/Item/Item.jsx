@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
-import {Contador} from '../../components/Contador/Contador'
+import {Contador} from '../Contador/Contador'
 import {Link} from 'react-router-dom'
 
 function Item({prod}){

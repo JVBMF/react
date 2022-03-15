@@ -1,6 +1,6 @@
 import Card from 'react-bootstrap/Card'
 
-function Detail(prod){
+function Detail({prod}){
     return(
         <div>
             <br/>

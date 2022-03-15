@@ -24,9 +24,10 @@ function ItemListContainer(){
 
             .then(resp => resp.json())
             
-            .then(resp => setProductos(resp.filter(pro => pro.id===categoriaId)))
+            .then(resp => setProductos(resp.filter(pro => pro.id===categoriaId))) //Que me deje usar resp.filter implica que resp es un array y el resp.json() lo convirtió de objeto a array
 
-        }else{//si entra por el undefined me muestra todo sion filtrar
+        }else{//si entra por el undefined me muestra todo sin filtrar
+            
             fetch('https://api.mercadolibre.com/sites/MLA/search?q=adidas')
             
             .then(resp => resp.json())

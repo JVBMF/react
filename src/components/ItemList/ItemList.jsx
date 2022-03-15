@@ -1,4 +1,4 @@
-import {Item} from '../../containers/Item/Item'
+import {Item} from '../Item/Item'
 
 function ItemList({productos}){
     return(
