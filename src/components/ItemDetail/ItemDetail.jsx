@@ -6,9 +6,10 @@ function ItemDetail({producto}){
         <div>
             <br/>
             <Card style={{ width: '18rem' }}>
-                {/* <Card.Img variant="top" src={producto.}/> */}
+                <Card.Img variant="top" src={producto.thumbnail}/>
                 <Card.Body>
                     <Card.Title>{producto.title}</Card.Title>
+                    <Card.Text>${producto.price}</Card.Text>
                 </Card.Body>
                 <Contador initial={1} stock={10}/>
             </Card>       
