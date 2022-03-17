@@ -3,7 +3,7 @@ import {NavBar} from './components/NavBar/NavBar';
 import {ItemCarrousel} from './components/ItemCarrousel/ItemCarrousel';
 import {MetodosDePago} from './components/MetodosDePago/MetodosDePago';
 import {ItemListContainer} from './containers/ItemListContainer/ItemListContainer';
-import {ItemDetailContainer} from './containers/ItemDetailContainer/ItemDetailContainer'
+import {ItemDetailContainer} from './containers/ItemDetailContainer/ItemDetailContainer';
 import {BrowserRouter, Routes,Route, Navigate} from 'react-router-dom'
 import {Cart} from './components/Cart/Cart'
 
@@ -19,7 +19,7 @@ function App() {
 
                 <div className = "App" > 
                     <NavBar />
-                </div>
+                </div>             
 
                 <Routes>
                     <Route path='/' element={<ItemCarrousel/>}/>

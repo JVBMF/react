@@ -6,7 +6,12 @@ const Contador =(obj) =>{
 
     const initial = obj.initial;
     const stock = obj.stock;
-    const [count, setCount]=useState(initial);
+    /* const [count, setCount]=useState(initial); */
+
+
+    const [count,setCount]=useState(null);
+
+
     const dif =stock-count;
     
     /* console.log(dif); */
@@ -29,13 +34,23 @@ const Contador =(obj) =>{
         }
     }
 
+    const onAdd=cant=>{
+        console.log(cant)
+        setCount(cant)
+    }
+
+    const agregar=()=>{
+        onAdd(count);
+    }
+
     return(
 
         <div className="conteContador">
             <div className="contador">
                 <button onClick={suma} id="button1">+</button>
                 <label>Stock disponible:{dif} </label> 
-                <button onClick={resta} id="button2">-</button> {/* Al hacer click se vuelve a cargar todo el componente (rerenderiza). Es decir, se vuelve a ejecutar la funcion  */}    
+                <button onClick={resta} id="button2">-</button> {/* Al hacer click se vuelve a cargar todo el componente (rerenderiza). Es decir, se vuelve a ejecutar la funcion  */}
+                 <button onClick={agregar}>Add to cart</button>
             </div>
         </div>
 
